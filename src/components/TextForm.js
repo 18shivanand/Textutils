@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-export default function TextForm() {
+export default function TextForm(props) {
   
       function ChangedText(event)
       {
@@ -11,6 +11,7 @@ export default function TextForm() {
       function ChangeUpperCase()
       {
         setText(text.toUpperCase());
+        props.showalert("converted to upper case", "success");
       }
 
 
@@ -18,6 +19,7 @@ export default function TextForm() {
       {
       
         setText(text.toLowerCase());
+        props.showalert("converted to lower case", "success");
       }
 
       function ClearText()
@@ -35,6 +37,7 @@ export default function TextForm() {
         });  
       
       setText ( CapitalizedWords.join(' '));
+      props.showalert("Capitalize the text", "success");
 
     }
 
@@ -43,14 +46,26 @@ export default function TextForm() {
       var copy =  document.getElementById("mytext");
       copy.select();
       navigator.clipboard.writeText(copy.value);
+      props.showalert("Copied  the text", "success");
+     
     }
 
     function RemoveExtraSpace()
     {
       let newtext = text.split(/[ ]+/);
       setText(newtext.join(' '));
+      props.showalert("removed the text", "success");
     }
+    function countWords(text){
+      let wc = text.split(" ").length;
+      text.split(" ").forEach((word) => {
+          if(!word.length){
+              wc -= 1;  
+          }
+      });
 
+      return wc;
+  }
   var [text, setText] = useState("");
   return (
     <div className='container'>
@@ -69,7 +84,7 @@ export default function TextForm() {
            
         <div className='container'>
               <h2>Your text contains</h2>
-              <p style={{color:"white"}}>{text.split(' ').length} words and {text.length} characters</p>
+              <p style={{color:"white"}}>{ countWords(text)} words and {text.length} characters</p>
               <p style={{color:"white"}}>{0.008 * (text.split(' ').length)} minutes to read text </p>
         </div>
         <div className='container' >
