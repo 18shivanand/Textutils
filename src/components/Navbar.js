@@ -8,7 +8,11 @@ export default function Navbar(props) {
         <nav className={'navbar navbar-expand-lg navbar-{props.mode} bg-{props.mode}'} >
       <div className="container-fluid">
         <a className="navbar-brand" href="/" style={{color: "#61dafb"}}>{props.title}</a>
+<<<<<<< HEAD
         <button className="navbar-toggler" type="button" style={{backgroundColor:'#61dafb'}}data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+=======
+        <button className="navbar-toggler" type="button"  style={{backgroundColor:'#61dafb'}} data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+>>>>>>> 282147b7b86b7c94619060f0c9d5f1a7580cbe00
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -24,10 +28,17 @@ export default function Navbar(props) {
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit" style={{color: "#61dafb"}}>Search</button>
           </form> */}
+<<<<<<< HEAD
           {/* <div className="form-check form-switch">
             <input type="checkbox" className="form-check-input" id="flexSwitchCheckDefault" onClick={props.toggleMode}/>
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault" >Enable Dark mode</label>
         </div> */}
+=======
+//           <div className="form-check form-switch">
+//             <input type="checkbox" className="form-check-input" id="flexSwitchCheckDefault" onClick={props.toggleMode}/>
+//             <label className="form-check-label" htmlFor="flexSwitchCheckDefault" >Enable Dark mode</label>
+//         </div>
+>>>>>>> 282147b7b86b7c94619060f0c9d5f1a7580cbe00
         </div>
       </div>
     </nav>
